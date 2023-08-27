@@ -46,7 +46,7 @@ resource google_compute_instance instance {
   }
 
   network_interface {
-    network = "default"
+    network = var.network
     network_ip = google_compute_address.address.address
     access_config {
       nat_ip = random_id.instance_suffix.keepers.address
@@ -66,7 +66,7 @@ resource null_resource delay_between_instance_and_route {
 
 resource google_compute_route route {
   name = google_compute_instance.instance.name
-  network = "default"
+  network = var.network
   dest_range = "0.0.0.0/0"
   tags = local.network_tags
   priority = var.route_priority
