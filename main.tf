@@ -22,6 +22,7 @@ resource google_compute_address address {
   name = "nat-instance-${local.region}-${random_id.address_suffix.hex}"
   address_type = "INTERNAL"
   region = random_id.address_suffix.keepers.region
+  network = var.network
 
   lifecycle {
     create_before_destroy = true
