@@ -13,15 +13,15 @@ output instance_name {
   description = "Name of the Compute Engine instance."
 }
 
-output route_name {
-  value = google_compute_route.route.name
-  description = "Name of the route used to route traffic through the instance."
-}
+#output route_name {
+#  value = google_compute_route.route.name
+#  description = "Name of the route used to route traffic through the instance."
+#}
 
-output route_priority {
-  value = google_compute_route.route.priority
-  description = "Priority assigned to the networking route used to route traffic through this instance."
-}
+#output route_priority {
+#  value = google_compute_route.route.priority
+#  description = "Priority assigned to the networking route used to route traffic through this instance."
+#}
 
 output zone {
   value = var.zone
@@ -48,10 +48,10 @@ output wait_duration {
   description = "The duration (in seconds) that was allowed for the NAT instance to finish booting."
 }
 
-output network_tags {
-  value = google_compute_route.route.tags
-  description = "Tags to which this instance's route applies."
-}
+#output network_tags {
+#  value = google_compute_route.route.tags
+#  description = "Tags to which this instance's route applies."
+#}
 
 output sysctl_config {
   value = var.sysctl_config
