@@ -70,8 +70,7 @@ resource google_compute_route route {
   for_each = var.destination_routes
   name = google_compute_instance.instance.name
   network = var.network
-  dest_range = each.value
-  tags = local.network_tags
+  dest_range = each.key
   priority = var.route_priority
   next_hop_instance = google_compute_instance.instance.self_link
   next_hop_instance_zone = google_compute_instance.instance.zone
