@@ -31,6 +31,11 @@ variable "network" {
   description = "Network Name"
 }
 
+variable "subnetwork" {
+  type = string
+  description = "subnetwork"
+}
+
 variable network_tags {
   type = set(string)
   default = []
