@@ -47,8 +47,6 @@ resource google_compute_instance instance {
   }
 
   network_interface {
-    network = var.network
-    subnetwork = var.subnetwork
     network_ip = google_compute_address.address.address
     access_config {
       nat_ip = random_id.instance_suffix.keepers.address
