@@ -67,9 +67,10 @@ resource null_resource delay_between_instance_and_route {
 }
 
 resource google_compute_route route {
+  for_each = var.destination_routes
   name = google_compute_instance.instance.name
   network = var.network
-  dest_range = "0.0.0.0/0"
+  dest_range = each.value
   tags = local.network_tags
   priority = var.route_priority
   next_hop_instance = google_compute_instance.instance.self_link
