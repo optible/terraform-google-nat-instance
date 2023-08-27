@@ -20,7 +20,7 @@ variable disk_type {
   description = "Type of the instance's disk (one of `pd-standard` or `pd-ssd`). `google` provider `>= 3.37` allows the option of `pd-balanced` to be provided."
 }
 variable destination_routes {
-  type = set(string)
+  type = list(string)
   description = "destination routes"
   default = ["0.0.0.0/0"]
 }
