@@ -26,6 +26,11 @@ variable machine_type {
   description = "Machine type of the instance."
 }
 
+variable "network" {
+  type = string
+  description = "Network Name"
+}
+
 variable network_tags {
   type = set(string)
   default = []
