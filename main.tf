@@ -34,7 +34,7 @@ resource google_compute_instance instance {
   zone = random_id.instance_suffix.keepers.zone
   can_ip_forward = true
   machine_type = random_id.instance_suffix.keepers.machine_type
-  delete_protection = true
+  deletion_protection = true
   metadata_startup_script = random_id.instance_suffix.keepers.startup_script
   metadata = local.instance_metadata
   tags = [local.instance_name]
